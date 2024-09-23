@@ -1,0 +1,18 @@
+services:
+  php:
+    build: .
+    container_name: cazonatto_server
+    volumes:
+      - ../:/var/www/html/
+    ports:
+      - 8089:80
+
+  mysql:
+    image: mysql:8
+    container_name: cazonatto_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    volumes:
+      - ./mysql/:/var/lib/mysql
+    ports:
+      - 8088:3306
