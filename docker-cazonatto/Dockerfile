@@ -11,10 +11,9 @@ RUN apt-get update && \
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN docker-php-source extract && \
-    docker-php-ext-configure pdo_mysql && \
-    docker-php-ext-install pdo_mysql && \
-    docker-php-source delete
+RUN apt-get update && \
+    apt-get install -y libsqlite3-dev sqlite3 && \
+    docker-php-ext-install pdo_sqlite sqlite3
 
 RUN a2enmod rewrite
 
