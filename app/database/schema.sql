@@ -1,0 +1,16 @@
+-- Active: 1727385753670@@127.0.0.1@3306
+CREATE TABLE products (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name TEXT NOT NULL,
+    description TEXT NOT NULL,
+    image TEXT NOT NULL,
+    price REAL NOT NULL,
+    unit TEXT NOT NULL
+);
+
+CREATE TABLE mount_cakes(
+    id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    part TEXT NOT NULL,
+    taste TEXT NOT NULL
+)
+
