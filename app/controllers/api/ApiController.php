@@ -18,7 +18,7 @@ class ApiController{
         echo json_encode($db->select("id = $id")->fetch(\PDO::FETCH_ASSOC));
     }
 
-    public function getAll(string $table): void{
+    public function listAll(string $table): void{
         $db = new Database($table);
 
         header('Content-Type: application/json');
